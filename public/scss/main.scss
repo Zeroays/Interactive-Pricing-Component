@@ -144,3 +144,15 @@ body {
     }
   }
 }
+
+//Mobile Responsiveness
+@media screen and (max-width: $mobile-width) {
+  .card__form {
+    grid-template-areas:
+      "pageviews"
+      "price-per-month"
+      "slider"
+      "options";
+    grid-template-rows: repeat(4, 1fr);
+  }
+}

@@ -23,51 +23,60 @@
   background-repeat: no-repeat;
 }
 
+//Range Slider
 @mixin slider {
   &:focus {
     outline: none;
   }
   &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    @include size($width: 35px, $height: 35px);
-    margin-top: -12.5px;
-    border-radius: 20px;
-    background: $soft-cyan url("../images/icon-slider.svg") center / 60%
-      no-repeat;
-    box-shadow: 0 20px 20px $soft-cyan;
-    transition: all 250ms ease-out;
-    cursor: pointer;
-  }
-  &::-webkit-slider-thumb::before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    background-color: white;
+    @include thumb-style;
   }
   &:active::-webkit-slider-thumb {
-    @include size($width: 40px, $height: 40px);
-    margin-top: -14.5px;
-    border-radius: 25px;
-    background-color: $strong-cyan;
-    cursor: grab;
-  }
-  &::-webkit-slider-thumb::before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-color: white;
+    @include thumb-style-active;
   }
   &::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
-    @include size($width: 100%, $height: 8px);
-    background-color: $light-grayish-blue-1;
-    border-radius: 10px;
+    @include track-style;
+  }
+  &::-moz-range-thumb {
+    @include thumb-style;
+  }
+  &:active::-moz-range-thumb {
+    @include thumb-style-active;
+  }
+  &::-moz-range-track {
+    @include track-style;
   }
 }
 
+//Range Slider Components
+@mixin thumb-style {
+  -webkit-appearance: none;
+  border: none;
+  @include size($width: 35px, $height: 35px);
+  margin-top: -12.5px;
+  border-radius: 20px;
+  background: $soft-cyan url("../images/icon-slider.svg") center / 60% no-repeat;
+  box-shadow: 0 20px 20px $soft-cyan;
+  transition: all 250ms ease-out;
+  cursor: pointer;
+}
+
+@mixin thumb-style-active {
+  @include size($width: 40px, $height: 40px);
+  margin-top: -14.5px;
+  border-radius: 25px;
+  background-color: $strong-cyan;
+  cursor: grab;
+}
+
+@mixin track-style {
+  -webkit-appearance: none;
+  @include size($width: 100%, $height: 8px);
+  background-color: $light-grayish-blue-1;
+  border-radius: 10px;
+}
+
+//Toggle Switch
 @mixin toggle-switch($width, $height, $color) {
   $thumb-padding: 4px;
 

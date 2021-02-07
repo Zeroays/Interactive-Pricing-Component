@@ -79,6 +79,7 @@ body {
       outline: none; }
     .card__form .form__slider::-webkit-slider-thumb {
       -webkit-appearance: none;
+      border: none;
       width: 35px;
       height: 35px;
       margin-top: -12.5px;
@@ -87,14 +88,6 @@ body {
       box-shadow: 0 20px 20px #a5f3eb;
       transition: all 250ms ease-out;
       cursor: pointer; }
-    .card__form .form__slider::-webkit-slider-thumb::before {
-      content: "";
-      position: absolute;
-      top: 5px;
-      left: 0;
-      width: 30px;
-      height: 30px;
-      background-color: white; }
     .card__form .form__slider:active::-webkit-slider-thumb {
       width: 40px;
       height: 40px;
@@ -102,12 +95,31 @@ body {
       border-radius: 25px;
       background-color: #10d5c2;
       cursor: grab; }
-    .card__form .form__slider::-webkit-slider-thumb::before {
-      content: "";
-      width: 20px;
-      height: 20px;
-      background-color: white; }
     .card__form .form__slider::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      background-color: #eaeefb;
+      border-radius: 10px; }
+    .card__form .form__slider::-moz-range-thumb {
+      -webkit-appearance: none;
+      border: none;
+      width: 35px;
+      height: 35px;
+      margin-top: -12.5px;
+      border-radius: 20px;
+      background: #a5f3eb url("../images/icon-slider.svg") center/60% no-repeat;
+      box-shadow: 0 20px 20px #a5f3eb;
+      transition: all 250ms ease-out;
+      cursor: pointer; }
+    .card__form .form__slider:active::-moz-range-thumb {
+      width: 40px;
+      height: 40px;
+      margin-top: -14.5px;
+      border-radius: 25px;
+      background-color: #10d5c2;
+      cursor: grab; }
+    .card__form .form__slider::-moz-range-track {
       -webkit-appearance: none;
       width: 100%;
       height: 8px;
@@ -215,3 +227,8 @@ body {
     .card__submission .submission__button:hover {
       background-color: rgba(41, 51, 86, 0.8);
       cursor: pointer; }
+
+@media screen and (max-width: 375px) {
+  .card__form {
+    grid-template-areas: "pageviews" "price-per-month" "slider" "options";
+    grid-template-rows: repeat(4, 1fr); } }
