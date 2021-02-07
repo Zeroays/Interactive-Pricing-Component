@@ -1,0 +1,127 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin padding($top: 0, $bottom: 0, $left: 0, $right: 0) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin icon-center($icon-src: "") {
+  background-image: url($icon-src);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@mixin slider {
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @include size($width: 35px, $height: 35px);
+    margin-top: -12.5px;
+    border-radius: 20px;
+    background: $soft-cyan url("../images/icon-slider.svg") center / 60%
+      no-repeat;
+    box-shadow: 0 20px 20px $soft-cyan;
+    transition: all 250ms ease-out;
+    cursor: pointer;
+  }
+  &::-webkit-slider-thumb::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+  }
+  &:active::-webkit-slider-thumb {
+    @include size($width: 40px, $height: 40px);
+    margin-top: -14.5px;
+    border-radius: 25px;
+    background-color: $strong-cyan;
+    cursor: grab;
+  }
+  &::-webkit-slider-thumb::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: white;
+  }
+  &::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    @include size($width: 100%, $height: 8px);
+    background-color: $light-grayish-blue-1;
+    border-radius: 10px;
+  }
+}
+
+@mixin toggle-switch($width, $height, $color) {
+  $thumb-padding: 4px;
+
+  position: relative;
+  display: inline-block;
+  width: $width;
+  height: $height;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: $height - 2 * $thumb-padding;
+    width: $height - 2 * $thumb-padding;
+    left: $thumb-padding;
+    bottom: $thumb-padding;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  input:checked + .slider {
+    background-color: $color;
+  }
+  input:focus + .slider {
+    box-shadow: 0 0 1px $color;
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX($height - 2 * $thumb-padding);
+    -ms-transform: translateX($height - 2 * $thumb-padding);
+    transform: translateX($height - 2 * $thumb-padding);
+  }
+  .slider.round {
+    border-radius: $height;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}

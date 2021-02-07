@@ -1,0 +1,217 @@
+:root {
+  font-family: "Manrope", sans-serif; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/bg-pattern.svg");
+  background-color: #fafbff;
+  background-position: 0 -100px;
+  background-repeat: no-repeat;
+  color: #293356; }
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/pattern-circles.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 200px; }
+  .description > * {
+    margin: 5px 0; }
+  .description__title {
+    font-size: 28px; }
+  .description__subtext {
+    font-size: 15px;
+    color: #858fad; }
+
+.card {
+  width: 525px;
+  height: 375px;
+  border-radius: 10px;
+  background-color: white;
+  color: #858fad;
+  box-shadow: 0 10px 25px #858fad;
+  display: grid;
+  grid-template-areas: "form" "submission"; }
+
+.card__form {
+  padding-top: 35px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-bottom: 1.5px solid rgba(133, 143, 173, 0.3);
+  grid-area: form;
+  display: grid;
+  grid-template-areas: "pageviews price-per-month" "slider slider" "options options";
+  grid-template-rows: 2fr 3fr 2fr; }
+  .card__form .form__pageviews {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    grid-area: pageviews;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; }
+  .card__form .form__price-per-month {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    grid-area: price-per-month; }
+    .card__form .form__price-per-month .price {
+      margin-right: 5px;
+      color: #293356;
+      font-size: 32px; }
+  .card__form .form__slider {
+    grid-area: slider;
+    -webkit-appearance: none; }
+    .card__form .form__slider:focus {
+      outline: none; }
+    .card__form .form__slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 35px;
+      height: 35px;
+      margin-top: -12.5px;
+      border-radius: 20px;
+      background: #a5f3eb url("../images/icon-slider.svg") center/60% no-repeat;
+      box-shadow: 0 20px 20px #a5f3eb;
+      transition: all 250ms ease-out;
+      cursor: pointer; }
+    .card__form .form__slider::-webkit-slider-thumb::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background-color: white; }
+    .card__form .form__slider:active::-webkit-slider-thumb {
+      width: 40px;
+      height: 40px;
+      margin-top: -14.5px;
+      border-radius: 25px;
+      background-color: #10d5c2;
+      cursor: grab; }
+    .card__form .form__slider::-webkit-slider-thumb::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: white; }
+    .card__form .form__slider::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      background-color: #eaeefb;
+      border-radius: 10px; }
+
+.form__options {
+  grid-area: options;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  .form__options > * {
+    margin: 0 5px; }
+  .form__options .form__monthly-billing-option {
+    font-size: 12px; }
+  .form__options .billing-option-switch {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 22px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important; }
+    .form__options .billing-option-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0; }
+    .form__options .billing-option-switch .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s; }
+    .form__options .billing-option-switch .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s; }
+    .form__options .billing-option-switch input:checked + .slider {
+      background-color: #a5f3eb; }
+    .form__options .billing-option-switch input:focus + .slider {
+      box-shadow: 0 0 1px #a5f3eb; }
+    .form__options .billing-option-switch input:checked + .slider:before {
+      -webkit-transform: translateX(14px);
+      -ms-transform: translateX(14px);
+      transform: translateX(14px); }
+    .form__options .billing-option-switch .slider.round {
+      border-radius: 22px; }
+    .form__options .billing-option-switch .slider.round:before {
+      border-radius: 50%; }
+  .form__options .form__yearly-billing-option {
+    font-size: 12px; }
+  .form__options .form__discount {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #feece7;
+    position: absolute;
+    top: 30%;
+    right: 0;
+    color: #ff8c66;
+    font-size: 12px;
+    font-weight: 800;
+    border-radius: 20px;
+    transform: translateX(10px); }
+
+.card__submission {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: submission; }
+  .card__submission .submission__info {
+    font-size: 12px;
+    list-style-type: none; }
+    .card__submission .submission__info .info__perk {
+      margin: 10px 0; }
+      .card__submission .submission__info .info__perk:before {
+        content: url("../images/icon-check.svg");
+        color: #10d5c2;
+        margin-right: 20px; }
+  .card__submission .submission__button {
+    width: 180px;
+    height: 42px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-color: #293356;
+    color: white;
+    transition: all 350ms ease; }
+    .card__submission .submission__button:hover {
+      background-color: rgba(41, 51, 86, 0.8);
+      cursor: pointer; }
