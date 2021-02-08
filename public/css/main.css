@@ -7,15 +7,15 @@
   box-sizing: border-box; }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-image: url("../images/bg-pattern.svg");
   background-color: #fafbff;
   background-position: 0 -100px;
   background-repeat: no-repeat;
   color: #293356; }
+
+.description,
+.card {
+  margin: 0 auto; }
 
 .description {
   display: flex;
@@ -25,7 +25,9 @@ body {
   background-image: url("../images/pattern-circles.svg");
   background-position: center center;
   background-repeat: no-repeat;
-  height: 200px; }
+  height: 200px;
+  margin: 0 auto;
+  text-align: center; }
   .description > * {
     margin: 5px 0; }
   .description__title {
@@ -37,12 +39,12 @@ body {
 .card {
   width: 525px;
   height: 375px;
+  display: grid;
+  grid-template-areas: "form" "submission";
   border-radius: 10px;
   background-color: white;
   color: #858fad;
-  box-shadow: 0 10px 25px #858fad;
-  display: grid;
-  grid-template-areas: "form" "submission"; }
+  box-shadow: 0 10px 25px #858fad; }
 
 .card__form {
   padding-top: 35px;
@@ -229,6 +231,36 @@ body {
       cursor: pointer; }
 
 @media screen and (max-width: 375px) {
+  .card {
+    height: auto;
+    width: 318.75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
   .card__form {
-    grid-template-areas: "pageviews" "price-per-month" "slider" "options";
-    grid-template-rows: repeat(4, 1fr); } }
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    grid-template-areas: "pageviews" "slider" "price-per-month" "options";
+    grid-template-rows: repeat(4, 1fr);
+    gap: 15px; }
+    .card__form .form__pageviews,
+    .card__form .form__price-per-month {
+      justify-content: center; }
+    .card__form .form__discount {
+      transform: translateX(80px); }
+  .card__submission {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column; }
+    .card__submission .submission__info {
+      width: 100%;
+      text-align: center; }
+    .card__submission .submission__button {
+      margin-top: 25px; } }

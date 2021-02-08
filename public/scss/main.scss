@@ -3,7 +3,6 @@
 @import "_variables";
 
 body {
-  @include flex($direction: column, $justify-content: center);
   background-image: url("../images/bg-pattern.svg");
   background-color: $very-pale-blue;
   background-position: 0 -100px;
@@ -11,10 +10,17 @@ body {
   color: $dark-desaturated-blue;
 }
 
+.description,
+.card {
+  margin: 0 auto;
+}
+
 .description {
   @include flex($direction: column, $justify-content: center);
   @include icon-center("../images/pattern-circles.svg");
   height: 200px;
+  margin: 0 auto;
+  text-align: center;
   & > * {
     margin: 5px 0;
   }
@@ -29,14 +35,14 @@ body {
 
 .card {
   @include size($width: $card-width, $height: $card-height);
-  border-radius: 10px;
-  background-color: $white;
-  color: $grayish-blue;
-  box-shadow: 0 10px 25px $grayish-blue;
   display: grid;
   grid-template-areas:
     "form"
     "submission";
+  border-radius: 10px;
+  background-color: $white;
+  color: $grayish-blue;
+  box-shadow: 0 10px 25px $grayish-blue;
 }
 
 .card__form {
@@ -147,12 +153,39 @@ body {
 
 //Mobile Responsiveness
 @media screen and (max-width: $mobile-width) {
+  .card {
+    height: auto;
+    width: $card-width-mobile;
+    @include flex($direction: column, $justify-content: center);
+  }
   .card__form {
+    @include padding($top: 30px, $bottom: 30px, $left: 20px, $right: 20px);
+    width: 100%;
     grid-template-areas:
       "pageviews"
-      "price-per-month"
       "slider"
+      "price-per-month"
       "options";
     grid-template-rows: repeat(4, 1fr);
+    gap: 15px;
+    .form__pageviews,
+    .form__price-per-month {
+      justify-content: center;
+    }
+    .form__discount {
+      transform: translateX(80px);
+    }
+  }
+  .card__submission {
+    width: 100%;
+    @include padding($top: 10px, $bottom: 20px, $left: 20px, $right: 20px);
+    flex-direction: column;
+    .submission__info {
+      width: 100%;
+      text-align: center;
+    }
+    .submission__button {
+      margin-top: 25px;
+    }
   }
 }
