@@ -153,6 +153,16 @@ body {
 
 //Mobile Responsiveness
 @media screen and (max-width: $mobile-width) {
+  .description {
+    &__title {
+      font-size: $title-font-size * 0.8;
+    }
+    &__subtext {
+      width: 45%;
+      font-size: $introductory-paragraph-font-size * 0.8;
+      color: $grayish-blue;
+    }
+  }
   .card {
     height: auto;
     width: $card-width-mobile;
@@ -173,7 +183,8 @@ body {
       justify-content: center;
     }
     .form__discount {
-      transform: translateX(80px);
+      position: absolute;
+      transform: translateX(25px);
     }
   }
   .card__submission {

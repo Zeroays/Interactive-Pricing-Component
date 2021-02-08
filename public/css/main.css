@@ -231,6 +231,12 @@ body {
       cursor: pointer; }
 
 @media screen and (max-width: 375px) {
+  .description__title {
+    font-size: 22.4px; }
+  .description__subtext {
+    width: 45%;
+    font-size: 12px;
+    color: #858fad; }
   .card {
     height: auto;
     width: 318.75px;
@@ -251,7 +257,8 @@ body {
     .card__form .form__price-per-month {
       justify-content: center; }
     .card__form .form__discount {
-      transform: translateX(80px); }
+      position: absolute;
+      transform: translateX(25px); }
   .card__submission {
     width: 100%;
     padding-top: 10px;

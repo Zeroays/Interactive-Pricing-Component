@@ -28,11 +28,11 @@
       <section class="card__form">
         <p class="form__pageviews">0K Pageviews</p>
         <p class="form__price-per-month"><strong class="price">$ 0</strong>  / month</p>
-        <input class="form__slider" type="range" name="pageviews-slider" id="pageviews-slider" />
+        <input class="form__slider" type="range" name="pageviews-slider" id="pageviews-slider" min="1" max="5" step="1"/>
         <section class="form__options">
           <p class="form__monthly-billing-option">Monthly Billing</p>
           <label class="billing-option-switch">
-            <input type="checkbox">
+            <input class="option-checkbox" type="checkbox">
             <span class="slider round"></span>
           </label>
           <p class="form__yearly-billing-option">Yearly Billing</p>
@@ -56,7 +56,7 @@
   
 
   
-  
+  <script src="script.js"></script>
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
