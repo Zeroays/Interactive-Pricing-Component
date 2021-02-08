@@ -65,6 +65,7 @@ body {
     grid-area: pageviews;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    font-size: $pageview-font-size;
   }
 
   .form__price-per-month {
@@ -81,10 +82,18 @@ body {
     }
   }
 
-  .form__slider {
+  .pageview-to-price-slider {
     grid-area: slider;
-    -webkit-appearance: none;
-    @include slider;
+    @include flex(
+      $direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
+    .form__slider {
+      width: 100%;
+      -webkit-appearance: none;
+      @include slider;
+    }
   }
 }
 

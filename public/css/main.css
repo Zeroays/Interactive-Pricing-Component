@@ -63,7 +63,8 @@ body {
     align-items: center;
     grid-area: pageviews;
     text-transform: uppercase;
-    letter-spacing: 1.5px; }
+    letter-spacing: 1.5px;
+    font-size: 15px; }
   .card__form .form__price-per-month {
     display: flex;
     flex-direction: row;
@@ -74,59 +75,65 @@ body {
       margin-right: 5px;
       color: #293356;
       font-size: 32px; }
-  .card__form .form__slider {
+  .card__form .pageview-to-price-slider {
     grid-area: slider;
-    -webkit-appearance: none; }
-    .card__form .form__slider:focus {
-      outline: none; }
-    .card__form .form__slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      border: none;
-      width: 35px;
-      height: 35px;
-      margin-top: -12.5px;
-      border-radius: 20px;
-      background: #a5f3eb url("../images/icon-slider.svg") center/60% no-repeat;
-      box-shadow: 0 20px 20px #a5f3eb;
-      transition: all 250ms ease-out;
-      cursor: pointer; }
-    .card__form .form__slider:active::-webkit-slider-thumb {
-      width: 40px;
-      height: 40px;
-      margin-top: -14.5px;
-      border-radius: 25px;
-      background-color: #10d5c2;
-      cursor: grab; }
-    .card__form .form__slider::-webkit-slider-runnable-track {
-      -webkit-appearance: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .card__form .pageview-to-price-slider .form__slider {
       width: 100%;
-      height: 8px;
-      background-color: #eaeefb;
-      border-radius: 10px; }
-    .card__form .form__slider::-moz-range-thumb {
-      -webkit-appearance: none;
-      border: none;
-      width: 35px;
-      height: 35px;
-      margin-top: -12.5px;
-      border-radius: 20px;
-      background: #a5f3eb url("../images/icon-slider.svg") center/60% no-repeat;
-      box-shadow: 0 20px 20px #a5f3eb;
-      transition: all 250ms ease-out;
-      cursor: pointer; }
-    .card__form .form__slider:active::-moz-range-thumb {
-      width: 40px;
-      height: 40px;
-      margin-top: -14.5px;
-      border-radius: 25px;
-      background-color: #10d5c2;
-      cursor: grab; }
-    .card__form .form__slider::-moz-range-track {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 8px;
-      background-color: #eaeefb;
-      border-radius: 10px; }
+      -webkit-appearance: none; }
+      .card__form .pageview-to-price-slider .form__slider:focus {
+        outline: none; }
+      .card__form .pageview-to-price-slider .form__slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        width: 35px;
+        height: 35px;
+        margin-top: -12.5px;
+        border-radius: 20px;
+        background: #a5f3eb url("../images/icon-slider.svg") center/60% no-repeat;
+        box-shadow: 0 20px 20px #a5f3eb;
+        transition: all 250ms ease-out;
+        cursor: pointer; }
+      .card__form .pageview-to-price-slider .form__slider:active::-webkit-slider-thumb {
+        width: 40px;
+        height: 40px;
+        margin-top: -14.5px;
+        border-radius: 25px;
+        background-color: #10d5c2;
+        cursor: grab; }
+      .card__form .pageview-to-price-slider .form__slider::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 8px;
+        background-color: #eaeefb;
+        border-radius: 10px; }
+      .card__form .pageview-to-price-slider .form__slider::-moz-range-thumb {
+        -webkit-appearance: none;
+        border: none;
+        width: 35px;
+        height: 35px;
+        margin-top: -12.5px;
+        border-radius: 20px;
+        background: #a5f3eb url("../images/icon-slider.svg") center/60% no-repeat;
+        box-shadow: 0 20px 20px #a5f3eb;
+        transition: all 250ms ease-out;
+        cursor: pointer; }
+      .card__form .pageview-to-price-slider .form__slider:active::-moz-range-thumb {
+        width: 40px;
+        height: 40px;
+        margin-top: -14.5px;
+        border-radius: 25px;
+        background-color: #10d5c2;
+        cursor: grab; }
+      .card__form .pageview-to-price-slider .form__slider::-moz-range-track {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 8px;
+        background-color: #eaeefb;
+        border-radius: 10px; }
 
 .form__options {
   grid-area: options;

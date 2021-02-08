@@ -23,14 +23,16 @@
       <p class="description__subtext">Sign-up for our 30-day trial. No credit card required.</p>
     </section>
 
-    <section class="card">
+    <div class="card">
 
       <section class="card__form">
-        <p class="form__pageviews">0K Pageviews</p>
+        <h2 class="form__pageviews">0K Pageviews</h2>
         <p class="form__price-per-month"><strong class="price">$ 0</strong>  / month</p>
-        <input class="form__slider" type="range" name="pageviews-slider" id="pageviews-slider" min="1" max="5" step="1"/>
+        <label class="pageview-to-price-slider">
+          <input class="form__slider" type="range" name="pageviews-slider" id="pageviews-slider" min="1" max="5" step="1"/>
+        </label>
         <section class="form__options">
-          <p class="form__monthly-billing-option">Monthly Billing</p>
+          <h2 class="form__monthly-billing-option">Monthly Billing</h2>
           <label class="billing-option-switch">
             <input class="option-checkbox" type="checkbox">
             <span class="slider round"></span>
@@ -40,16 +42,16 @@
         </section>
       </section>
 
-      <section class="card__submission">
+      <div class="card__submission">
         <ul class="submission__info">
           <li class="info__perk">Unlimited websites</li>
           <li class="info__perk">100% data ownership</li>
           <li class="info__perk">Email reports</li>
         </ul>
         <button class="submission__button">Start my trial</button>
-      </section>
+      </div>
         
-    </section>
+    </div>
 
   </main>
   
